@@ -7,4 +7,20 @@ requires-python = ">=3.14"
 dependencies = []
 
 [dependency-groups]
-dev = []
+dev = [
+  "matplotlib>=3.10.7",
+  "pandas>=2.3.3",
+  "pandas-stubs>=2.3.3.251201",
+  "ruff>=0.14.8",
+  "shapely>=2.1.2",
+]
+
+[tool.ruff]
+select = ["ALL"]
+lint.ignore = [
+  "E501", # Line too long
+  "S101", # Use of assert detected: Pytest handles assertions in tests
+  "D203", # Insert 1 blank line before class docstring (prefer D211)
+  "D213",
+  "S311", # We do not need to account with security for this project
+]
